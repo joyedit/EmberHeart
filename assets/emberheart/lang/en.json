@@ -1,0 +1,33 @@
+{
+	"item-emberheart": "Emberheart",
+	"item-emberheartshell": "Spent Emberheart Shell",
+	"item-emberheartpowder": "Emberheart Powder",
+
+	"itemdesc-emberheart": "A sealed clay-and-wax pellet packed with iron filings, salt and charcoal. Crack it open and it burns warm for hours.",
+	"itemdesc-emberheartshell": "A burnt-out clay shell, still smelling of sulfur. Crush or recombine it to reclaim the clay.",
+	"itemdesc-emberheartpowder": "A grey-black blend of ground iron, salt and charcoal. It wants only a spark and something to hold it.",
+
+	"heldhelp-crack": "Crack open",
+
+	"iteminfo-duration": "Burns for about {0} minutes ({1} in-game hours)",
+	"iteminfo-boost": "Adds up to {0} C of core warmth per second, to a ceiling of {1} C",
+	"iteminfo-floor": "Holds your core temperature at or above {0} C",
+	"iteminfo-singleuse": "Single use. Leaves a spent shell.",
+
+	"msg-lit": "The Emberheart cracks open and begins to burn. About {0} of warmth.",
+	"msg-refreshed": "You crack a fresh Emberheart. The warmth is renewed - about {0} left.",
+	"msg-cooling": "Your Emberheart is cooling.",
+	"msg-expired": "Your Emberheart has burnt out.",
+	"msg-died": "Your Emberheart goes out.",
+	"msg-resumed": "Your Emberheart is still burning - about {0} left.",
+
+	"hud-active": "Emberheart {0}",
+	"hud-cooling": "Emberheart {0} (cooling)",
+
+	"ingameerror-alreadyactive": "An Emberheart is already burning.",
+	"ingameerror-swimming": "Not in the water - it would be ruined.",
+
+	"recipename-emberheartpowder": "Emberheart powder",
+	"recipename-emberheart": "Emberheart",
+	"recipename-emberheartshell-reclaim": "Reclaimed clay"
+}

@@ -1,0 +1,60 @@
+{
+	code: "emberheart",
+	class: "Item",
+	behaviors: [
+		{
+			name: "EmberheartActivation",
+			properties: {
+				applicationTimeSec: 1.0,
+				shellCode: "emberheart:emberheartshell",
+				sound: "game:sounds/sizzle",
+				soundRange: 12
+			}
+		},
+		{ name: "GroundStorable", properties: { layout: 'Quadrants', collisionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.125, z2: 1 } } }
+	],
+	// The nugget shape is a small sealed lump, which is exactly the silhouette wanted:
+	// a fired clay body (the "granite" texture slot) shot through with glowing material
+	// (the "ore" slot). Placeholder art, reusing vanilla textures only.
+	shape: { base: "game:item/nugget" },
+	textures: {
+		"granite": { base: "game:block/clay/aged-ceramic1" },
+		"ore": { base: "game:block/coal/ember" }
+	},
+	// Single use and deliberately not hoardable in bulk.
+	maxstacksize: 4,
+	creativeinventory: { "general": ["*"], "items": ["*"] },
+	materialDensity: 1200,
+	attributes: {
+		displaycaseable: true,
+		shelvable: true,
+		onDisplayTransform: {
+			origin: { x: 0.5, y: 0, z: 0.5 },
+			scale: 0.7
+		}
+	},
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: -23, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 2.8
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 3.0
+	},
+	fpHandTransform: {
+		translation: { x: 0.08, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 1.4
+	},
+	tpHandTransform: {
+		translation: { x: -0.1, y: -0.05, z: -0.4 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 0.7
+	}
+}

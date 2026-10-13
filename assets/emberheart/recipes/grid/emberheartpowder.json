@@ -1,0 +1,44 @@
+[
+	{
+		// GRIND STEP, early-game path. Iron ore NUGGETS, not smithing bits: loose ore
+		// stones scatter on the surface above any iron deposit, are right-click pickup
+		// with bare hands (looseores has RightClickPickup/dropsPickupMode), and drop
+		// 2 +/- 1 nuggets each. No bloomery, no pickaxe, no smelting - available on day
+		// one to anyone who finds a deposit's surface trail.
+		//
+		// All ingredient quantities for the whole mod live in this file and in
+		// emberheart.json next to it. These are the numbers to edit to retune cost.
+		ingredientPattern: "ISC",
+		ingredients: {
+			"I": {
+				type: "item",
+				code: "game:nugget-*",
+				// Any of the three vanilla iron ores. allowedVariants narrows the
+				// wildcard so this does not quietly accept gold or copper nuggets.
+				allowedVariants: ["limonite", "hematite", "magnetite"],
+				quantity: 8
+			},
+			"S": { type: "item", code: "game:salt", quantity: 2 },
+			"C": { type: "item", code: "game:powder-charcoal", quantity: 2 }
+		},
+		name: "emberheartpowder",
+		width: 3,
+		height: 1,
+		output: { type: "item", code: "emberheart:emberheartpowder", quantity: 1 }
+	},
+	{
+		// GRIND STEP, iron-age path. Anyone who already runs a bloomery should not have
+		// to go back to picking rocks off the ground, so smithing bits work too - fewer
+		// of them, because they are refined metal rather than ore.
+		ingredientPattern: "ISC",
+		ingredients: {
+			"I": { type: "item", code: "game:metalbit-iron", quantity: 4 },
+			"S": { type: "item", code: "game:salt", quantity: 2 },
+			"C": { type: "item", code: "game:powder-charcoal", quantity: 2 }
+		},
+		name: "emberheartpowder",
+		width: 3,
+		height: 1,
+		output: { type: "item", code: "emberheart:emberheartpowder", quantity: 1 }
+	}
+]

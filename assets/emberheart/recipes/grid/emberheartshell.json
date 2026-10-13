@@ -1,0 +1,15 @@
+[
+	{
+		// Spent shells are fired clay and worth reclaiming rather than dropping.
+		// (The shell also has crushingProps, so a pulverizer handles it too.)
+		ingredientPattern: "SS,SS",
+		ingredients: {
+			"S": { type: "item", code: "emberheart:emberheartshell", quantity: 1 }
+		},
+		name: "emberheartshell-reclaim",
+		width: 2,
+		height: 2,
+		shapeless: true,
+		output: { type: "item", code: "game:clay-blue", quantity: 1 }
+	}
+]

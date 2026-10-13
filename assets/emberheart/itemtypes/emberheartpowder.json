@@ -1,0 +1,44 @@
+{
+	code: "emberheartpowder",
+	class: "Item",
+	behaviors: [
+		{ name: "GroundStorable", properties: { layout: 'Messy12', collisionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.125, z2: 1 } } }
+	],
+	heldTpIdleAnimation: "holdbothhands",
+	heldRightReadyAnimation: "holdbothhands",
+	// Same shape and texture slot vanilla uses for its own powders.
+	shape: { base: "game:item/food/flour" },
+	texture: { base: "game:block/coal/charcoal" },
+	maxstacksize: 64,
+	creativeinventory: { "general": ["*"], "items": ["*"] },
+	materialDensity: 600,
+	attributes: {
+		inContainerTexture: { base: "game:block/coal/charcoal" },
+		dissolveInWater: true,
+		displaycaseable: true,
+		shelvable: true,
+		onDisplayTransform: {
+			translation: { x: 0.05, y: 0, z: 0 },
+			origin: { x: 0.5, y: 0, z: 0.5 },
+			scale: 0.65
+		}
+	},
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 2.2
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 2.5
+	},
+	tpHandTransform: {
+		translation: { x: -0.1, y: -0.05, z: -0.4 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 0.6
+	}
+}

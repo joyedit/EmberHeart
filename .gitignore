@@ -1,0 +1,18 @@
+# Build output
+bin/
+obj/
+
+# Packaged mod artifacts
+*.zip
+
+# pCloud sync conflict artifacts (literal "[conflicted]" in the name)
+*\[conflicted\]*
+
+# Claude local settings
+.claude/settings.local.json
+
+# Editor / OS cruft
+*.user
+*.suo
+.vs/
+.DS_Store

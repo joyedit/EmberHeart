@@ -1,0 +1,48 @@
+{
+	code: "emberheartshell",
+	class: "Item",
+	behaviors: [
+		{ name: "GroundStorable", properties: { layout: 'Quadrants', collisionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.125, z2: 1 } } }
+	],
+	// Same lump, burnt out: the ember slot swapped for spent charcoal.
+	shape: { base: "game:item/nugget" },
+	textures: {
+		"granite": { base: "game:block/clay/aged-ceramic1" },
+		"ore": { base: "game:block/coal/charcoal" }
+	},
+	maxstacksize: 32,
+	creativeinventory: { "general": ["*"], "items": ["*"] },
+	materialDensity: 1000,
+	// Crushable back into usable clay, so the shell is worth carrying home rather than
+	// litter. Uses the same crushing mechanic vanilla gives ores.
+	crushingProps: {
+		crushedStack: { type: "item", code: "game:clay-blue", stacksize: 1 },
+		hardnessTier: 1
+	},
+	attributes: {
+		displaycaseable: true,
+		shelvable: true,
+		onDisplayTransform: {
+			origin: { x: 0.5, y: 0, z: 0.5 },
+			scale: 0.7
+		}
+	},
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: -23, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 2.8
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 3.0
+	},
+	tpHandTransform: {
+		translation: { x: -0.1, y: -0.05, z: -0.4 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 0.7
+	}
+}

@@ -1,0 +1,18 @@
+[
+	{
+		// SEAL STEP. The fired bowl is the shell, the beeswax is the seal, and the
+		// sulfur powder is the costly part - it is quern-ground from sulfur ore, which
+		// is scarce and already wanted for blasting powder and acid.
+		ingredientPattern: "PB,WS",
+		ingredients: {
+			"P": { type: "item", code: "emberheart:emberheartpowder", quantity: 1 },
+			"B": { type: "block", code: "game:bowl-*-fired", quantity: 1 },
+			"W": { type: "item", code: "game:beeswax", quantity: 1 },
+			"S": { type: "item", code: "game:powder-sulfur", quantity: 1 }
+		},
+		name: "emberheart",
+		width: 2,
+		height: 2,
+		output: { type: "item", code: "emberheart:emberheart", quantity: 1 }
+	}
+]

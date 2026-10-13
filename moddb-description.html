@@ -1,0 +1,110 @@
+<!-- ===== DRAFT NOTICE - delete this block before publishing ===== -->
+<p><em><strong>In development.</strong> Balance is still being tested in cold biomes and the
+numbers below may move before release. Feedback on how it feels in a real winter is welcome.</em></p>
+<!-- ===== end draft notice ===== -->
+
+<h2>Emberheart</h2>
+
+<p><strong>A single-use emergency warmer for when the cold is about to kill you.</strong> A sealed
+clay-and-wax pellet packed with ground iron, salt and charcoal. Hold right-click for a second to
+crack it open and it burns warm for minutes, holding your core temperature up while you get back to
+shelter. Expensive to make and gone when it is used &mdash; an emergency, not a habit.</p>
+
+<h3>How it works</h3>
+<p>Hold <strong>right mouse</strong> for about a second. The pellet cracks with a hiss, one is
+consumed, and you are left holding a <strong>Spent Emberheart Shell</strong>. For the next six
+minutes or so the Emberheart feeds warmth into your core body temperature, ramping up over the
+first half-minute and fading out over the last tenth of its burn. Ember motes drift off you while
+it is lit, and a small readout above the hotbar counts down the time left.</p>
+
+<p>It is a <em>contest</em>, not a cheat. The warmth is added on top of whatever the climate is
+doing to you, so in ordinary cold it will carry you back toward normal and hold you there &mdash;
+but a hard enough blizzard, or being soaked through in deep winter, can still out-pull it. That is
+deliberate. An Emberheart buys you time to reach shelter; it is not a shelter.</p>
+
+<p>It will never cook you either. The effect stops contributing once you reach a ceiling just above
+normal body temperature, and it never pulls you back down &mdash; so warming yourself at a fire or
+a Great Hearth while one is burning works exactly as you would expect.</p>
+
+<h3>Crafting</h3>
+
+<p><strong>Emberheart Powder</strong> (3&times;1 grid) &mdash; the grind step:</p>
+<pre>
+[ Iron ] [ Salt x2 ] [ Charcoal powder x2 ]
+</pre>
+<p>Two accepted sources for the iron, so this is <em>not</em> gated behind a bloomery:</p>
+<ul>
+  <li><strong>Iron ore nuggets</strong> &times;8 &mdash; limonite, hematite or magnetite. The loose
+      ore stones that scatter on the surface above an iron deposit are picked up by hand, no tool
+      required, and give 2&ndash;3 nuggets each. Available from day one.</li>
+  <li><strong>or Iron bits</strong> &times;4 &mdash; if you already run a bloomery, use smithing
+      scrap instead and save yourself the walk.</li>
+</ul>
+
+<p><strong>Emberheart</strong> (2&times;2 grid) &mdash; the seal step:</p>
+<pre>
+[ Emberheart powder ] [ Fired bowl    ]
+[ Beeswax           ] [ Sulfur powder ]
+</pre>
+<ul>
+  <li><strong>Fired bowl</strong> &mdash; any colour; this becomes the shell</li>
+  <li><strong>Beeswax</strong> &mdash; the seal</li>
+  <li><strong>Sulfur powder</strong> &mdash; quern-ground from sulfur ore</li>
+</ul>
+
+<p>Sulfur is the real gate. It spawns only in specific deposits and is already wanted for blasting
+powder and acid, so every Emberheart costs you something you would rather have kept. Nothing in the
+chain needs metalworking &mdash; a quern and a pit kiln are the only tools involved.</p>
+
+<p><strong>Reclaiming shells</strong> (2&times;2, shapeless) &mdash; four Spent Emberheart Shells
+return one blue clay. A pulverizer will crush a single shell for the same. Worth carrying home
+rather than dropping.</p>
+
+<h3>Behavior</h3>
+<ul>
+  <li><strong>Duration:</strong> about 6 real minutes by default (6 in-game hours at default calendar speed)</li>
+  <li><strong>Activation:</strong> ~1 second of held right-click, with a progress ring</li>
+  <li><strong>Ramp:</strong> climbs to full strength over ~25 seconds rather than snapping on</li>
+  <li><strong>Taper:</strong> fades out over the final 10% of the burn, with a warning message</li>
+  <li><strong>No stacking:</strong> cracking a second one while the first still burns
+      <em>refreshes the timer</em>. The heat never doubles.</li>
+  <li><strong>Survives relog and server restart.</strong> The effect is stored against world time,
+      so logging out, restarting the server, or stopping for the night all resume correctly with
+      the right time remaining &mdash; and it does not burn away while the server is offline.</li>
+  <li><strong>Ends on death.</strong> No free warm respawn.</li>
+  <li>Cannot be cracked open while swimming &mdash; a soaked pellet is the whole reason it is
+      sealed in clay.</li>
+</ul>
+
+<h3>Configurable</h3>
+<p>An <code>emberheart.json</code> config file (auto-generated in <code>ModConfig</code>) exposes
+everything: burn duration, warmth per second, the temperature ceiling, ramp-up time, taper
+fraction, tick interval, and whether a second pellet refreshes the timer. The HUD readout and the
+ember particles can each be switched off.</p>
+
+<p>Two warming models are included. <strong>Boost</strong> (the default) adds heat per second and
+lets severe weather fight back. <strong>Floor</strong> instead holds your core temperature at or
+above a set minimum. Switch with one config value, or in-game with
+<code>/emberheart mode boost|floor</code>.</p>
+
+<h3>Commands</h3>
+<ul>
+  <li><code>/emberheart status</code> &mdash; your body temperature, which danger band it falls in,
+      every factor currently pushing it up or down, and what the Emberheart is contributing right
+      now. Useful on its own for understanding why you are freezing.</li>
+  <li><code>/emberheart start</code> / <code>stop</code> &mdash; light or snuff one without spending
+      an item (admin).</li>
+  <li><code>/emberheart mode boost|floor</code> &mdash; switch models without a restart (admin).</li>
+</ul>
+
+<h3>Compatibility</h3>
+<ul>
+  <li>Built for <strong>Vintage Story 1.22+</strong></li>
+  <li>Universal (required on client and server); safe for multiplayer. All warming is decided
+      server-side.</li>
+  <li><strong>No Harmony patches.</strong> Body temperature is adjusted through the public API, so
+      this will not fight other temperature mods over the same patched methods.</li>
+  <li>Designed as a companion to <strong>Great Hearths</strong> &mdash; a hearth warms a room, an
+      Emberheart warms the one person caught out in the open. Using both together is fine; warming
+      at a hearth will not be capped or cancelled by a burning Emberheart.</li>
+</ul>

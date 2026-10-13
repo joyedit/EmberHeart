@@ -1,0 +1,15 @@
+{
+  "type": "code",
+  "modid": "emberheart",
+  "name": "Emberheart",
+  "website": "https://github.com/joyedit/EmberHeart",
+  "authors": ["Feyd"],
+  "description": "A sealed clay-and-wax pellet packed with iron filings, salt and charcoal. Crack one open and it burns warm for hours, holding your core temperature up when the cold would otherwise kill you. Expensive to make and single use - an emergency, not a habit.",
+  "version": "0.1.0",
+  "side": "Universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true,
+  "dependencies": {
+    "game": ""
+  }
+}
