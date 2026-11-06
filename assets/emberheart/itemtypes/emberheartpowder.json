@@ -6,14 +6,18 @@
 	],
 	heldTpIdleAnimation: "holdbothhands",
 	heldRightReadyAnimation: "holdbothhands",
-	// Same shape and texture slot vanilla uses for its own powders.
+	// Same shape vanilla uses for its own powders, with its transforms copied verbatim
+	// from game:powder-* - the pile only reads as a pile from that viewing angle, and
+	// the default rotation of 0 renders it as a flat smear.
 	shape: { base: "game:item/food/flour" },
-	texture: { base: "game:block/coal/charcoal" },
+	// Own texture, so it is a grey-black iron-and-charcoal grind flecked with salt and
+	// dormant ember rather than flat charcoal.
+	texture: { base: "emberheart:item/emberheart-powder" },
 	maxstacksize: 64,
 	creativeinventory: { "general": ["*"], "items": ["*"] },
 	materialDensity: 600,
 	attributes: {
-		inContainerTexture: { base: "game:block/coal/charcoal" },
+		inContainerTexture: { base: "emberheart:item/emberheart-powder" },
 		dissolveInWater: true,
 		displaycaseable: true,
 		shelvable: true,
@@ -21,24 +25,29 @@
 			translation: { x: 0.05, y: 0, z: 0 },
 			origin: { x: 0.5, y: 0, z: 0.5 },
 			scale: 0.65
+		},
+		groundStorageTransform: {
+			translation: { x: 0, y: -0.055, z: 0 },
+			rotation: { x: 0.1, y: 8, z: 0.1 },
+			scale: 0.9
 		}
 	},
 	guiTransform: {
 		translation: { x: 0, y: 0, z: 0 },
-		rotation: { x: 0, y: 0, z: 0 },
-		origin: { x: 0.5, y: 0.1, z: 0.5 },
-		scale: 2.2
+		rotation: { x: 149, y: 12, z: 0 },
+		origin: { x: 0.41, y: -0.1, z: 0.8 },
+		scale: 2.54
 	},
 	groundTransform: {
-		translation: { x: 0, y: 0, z: 0 },
-		rotation: { x: 0, y: 0, z: 0 },
+		translation: { x: 0, y: 0.45, z: 0 },
+		rotation: { x: 0.1, y: 8, z: 0.1 },
 		origin: { x: 0.5, y: 0, z: 0.5 },
-		scale: 2.5
+		scale: 4.5
 	},
 	tpHandTransform: {
-		translation: { x: -0.1, y: -0.05, z: -0.4 },
-		rotation: { x: 0, y: 0, z: 0 },
+		translation: { x: -1.87, y: -1.25, z: -0.8 },
+		rotation: { x: 70, y: 11, z: -65 },
 		origin: { x: 0.5, y: 0, z: 0.5 },
-		scale: 0.6
+		scale: 0.41
 	}
 }

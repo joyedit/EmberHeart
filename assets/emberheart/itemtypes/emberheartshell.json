@@ -4,11 +4,12 @@
 	behaviors: [
 		{ name: "GroundStorable", properties: { layout: 'Quadrants', collisionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.125, z2: 1 } } }
 	],
-	// Same lump, burnt out: the ember slot swapped for spent charcoal.
-	shape: { base: "game:item/nugget" },
+	// Same pellet, burnt out: identical geometry with the glow stripped off the seam
+	// faces and the core texture swapped for dead ash.
+	shape: { base: "emberheart:item/emberheart-spent" },
 	textures: {
-		"granite": { base: "game:block/clay/aged-ceramic1" },
-		"ore": { base: "game:block/coal/charcoal" }
+		"shell": { base: "emberheart:item/emberheart-shell" },
+		"core": { base: "emberheart:item/emberheart-spent" }
 	},
 	maxstacksize: 32,
 	creativeinventory: { "general": ["*"], "items": ["*"] },
@@ -25,24 +26,29 @@
 		onDisplayTransform: {
 			origin: { x: 0.5, y: 0, z: 0.5 },
 			scale: 0.7
+		},
+		groundStorageTransform: {
+			translation: { x: 0, y: -0.02, z: 0 },
+			rotation: { x: 0, y: -22, z: 0 },
+			scale: 0.9
 		}
 	},
 	guiTransform: {
 		translation: { x: 0, y: 0, z: 0 },
-		rotation: { x: 0, y: -23, z: 0 },
-		origin: { x: 0.5, y: 0.1, z: 0.5 },
-		scale: 2.8
+		rotation: { x: 150, y: -28, z: -7 },
+		origin: { x: 0.5, y: 0.338, z: 0.5 },
+		scale: 2.2
 	},
 	groundTransform: {
 		translation: { x: 0, y: 0, z: 0 },
-		rotation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: -22, z: 0 },
 		origin: { x: 0.5, y: 0, z: 0.5 },
-		scale: 3.0
+		scale: 3.6
 	},
 	tpHandTransform: {
 		translation: { x: -0.1, y: -0.05, z: -0.4 },
 		rotation: { x: 0, y: 0, z: 0 },
 		origin: { x: 0.5, y: 0, z: 0.5 },
-		scale: 0.7
+		scale: 0.4
 	}
 }
