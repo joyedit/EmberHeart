@@ -16,3 +16,10 @@ obj/
 *.suo
 .vs/
 .DS_Store
+
+# Player reply drafts are never committed. They are written for pasting onto
+# the ModDB, not for people reading the source.
+docs/replies/
+replies/
+*-reply-*.md
+*-replies-*.md
